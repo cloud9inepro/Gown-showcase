@@ -10,7 +10,7 @@ Title: Freebie - Lowpoly People
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function Model(props) {
+export function People(props) {
   const { nodes, materials } = useGLTF('/models/people.glb')
   return (
     <group {...props} dispose={null}>

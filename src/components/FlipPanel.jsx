@@ -1,30 +1,80 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { RoundedBox } from "@react-three/drei";
+import { useControls } from "leva";
+import { Chapter01 } from "./Chapter01";
+import { Chapter02 } from "./Chapter02";
+import { Chapter03 } from "./Chapter03";
+import { Chapter04 } from "./Chapter04";
+import { useAtom } from "jotai";
+import { activeChapterAtom } from "../hooks/store";
 
-// Just X rotation targets per chapter — position never moves
-const CHAPTER_ROTATION_X = {
-  0: 0,
-  1: 0.5,
-  2: 1.1, // steep diagonal, like ch.4
-  3: 0.3,
+const CHAPTERS = {
+  0: Chapter01,
+  1: Chapter02,
+  2: Chapter03,
+  3: Chapter04,
 };
 
-export const FlipPanel = ({ activeChapter }) => {
+export const FlipPanel = () => {
   const panelRef = useRef();
+  const activeChapterRef = useRef(0);
+
+  const { chapter } = useControls({
+    chapter: { value: 0, min: 0, max: 4, step: 1 },
+  });
+
+  const [activeChapter, setActiveChapter] = useAtom(activeChapterAtom);
+  const ActiveChapterComponent = CHAPTERS[activeChapter] ?? Chapter01;
+
 
   useGSAP(() => {
-    gsap.to(panelRef.current.rotation, {
-      x: CHAPTER_ROTATION_X[activeChapter],
-      duration: 1.4,
-      ease: "power3.inOut",
-    });
-  }, [activeChapter]);
+  const tl = gsap.timeline();
+
+  tl.to(panelRef.current.rotation, {
+    y: chapter * Math.PI,
+    duration: 4,
+    ease: "power3.inOut",
+  }, 0);
+
+  tl.to(activeChapterRef.current.scale, {
+    x: 0, y: 0, z: 0,
+    duration: 2,
+    ease: "power2.in",
+  }, 0);
+
+  tl.call(() => setActiveChapter(chapter), null, 2);
+
+  tl.to(activeChapterRef.current.scale, {
+    x: 1, y: 1, z: 1,
+    duration: 2,
+    ease: "back.out(1.6)",
+  }, 2.2);
+
+}, [chapter]);
 
   return (
-    <mesh ref={panelRef} position={[0, 0.5, -0.5]}>
-      <planeGeometry args={[3, 3]} />
-      <meshStandardMaterial color="#e8e0d5" side={2} />
-    </mesh>
+    <group position={[0, 0.5, -0.45]}>
+      <mesh>
+        <boxGeometry args={[3.2, 3.2, 0.1]} />
+        <meshStandardMaterial color="#000" metalness={0.6} />
+      </mesh>
+
+      <RoundedBox
+        ref={panelRef}
+        args={[3, 3, 0.11]}
+        position={[0, 0, 0]}
+        radius={0.05}
+        smoothness={4}
+      >
+        <meshStandardMaterial color="#fff" roughness={0.4} />
+      </RoundedBox>
+
+      <group ref={activeChapterRef} position={[0, 0, 0.5]}>
+        <ActiveChapterComponent />
+      </group>
+      
+    </group>
   );
 };
