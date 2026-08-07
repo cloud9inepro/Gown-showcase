@@ -21,8 +21,6 @@ export function Gown(props) {
   const groupRef = useRef()
 
   useFrame((_, delta) => {
-    // if (props.activeChapter === 0 && groupRef.current) {
-      // Rotate the gown when activeChapter is 0
       groupRef.current.rotation.z += 0.5 * delta; 
   
   })

@@ -21,13 +21,13 @@ export const Experience = () => {
   return (
     <>
       <OrbitControls
-      minPolarAngle={Math.PI / 4}
-      maxPolarAngle={Math.PI / 2}
-      minAzimuthAngle={-Math.PI / 4}
-      maxAzimuthAngle={Math.PI / 4}
-      minDistance={2}
-      maxDistance={5}
-      makeDefault
+      // minPolarAngle={Math.PI / 4}
+      // maxPolarAngle={Math.PI / 2}
+      // minAzimuthAngle={-Math.PI / 4}
+      // maxAzimuthAngle={Math.PI / 4}
+      // minDistance={2}
+      // maxDistance={5}
+      // makeDefault
       />
 
       <Suspense fallback={null}>
