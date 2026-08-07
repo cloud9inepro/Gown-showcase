@@ -57,18 +57,18 @@ export const FlipPanel = () => {
   return (
     <group position={[0, 0.5, -0.45]}>
       <mesh>
-        <boxGeometry args={[3.2, 3.2, 0.1]} />
+        <boxGeometry args={[2.7, 2.7, 0.1]} />
         <meshStandardMaterial color="#000" metalness={0.6} />
       </mesh>
 
       <RoundedBox
         ref={panelRef}
-        args={[3, 3, 0.11]}
+        args={[2.5, 2.5, 0.11]}
         position={[0, 0, 0]}
         radius={0.05}
         smoothness={4}
       >
-        <meshStandardMaterial color="#fff" roughness={0.4} />
+        <meshStandardMaterial color="#594e40" roughness={0.4} />
       </RoundedBox>
 
       <group ref={activeChapterRef} position={[0, 0, 0.5]}>
