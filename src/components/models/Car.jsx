@@ -12,7 +12,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Car(props) {
-  const { nodes, materials } = useGLTF('./models/retro_car-transformed.glb')
+  const { nodes, materials } = useGLTF('./models/chapter-ii/retro_car-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Fars_Fars2_0.geometry} material={materials.Fars2} scale={0.01} />
@@ -29,4 +29,4 @@ export function Car(props) {
   )
 }
 
-useGLTF.preload('./models/retro_car-transformed.glb')
+useGLTF.preload('./models/chapter-ii/retro_car-transformed.glb')

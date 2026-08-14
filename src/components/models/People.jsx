@@ -11,7 +11,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function People(props) {
-  const { nodes, materials } = useGLTF('/models/people.glb')
+  const { nodes, materials } = useGLTF('/models/stage/people.glb')
   return (
     <group {...props} dispose={null}>
       <group name="Sketchfab_Scene">
@@ -22,7 +22,7 @@ export function People(props) {
                 <mesh name="Woman05_0057D0_0" geometry={nodes.Woman05_0057D0_0.geometry} material={materials['0057D0']} />
               </group>
               <group name="Woman08" position={[200, 0, -100]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Woman08_0057D0_0" geometry={nodes.Woman08_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Woman08_0057D0_0" geometry={nodes.Woman08_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
               <group name="Woman02" position={[100, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
                 <mesh name="Woman02_0057D0_0" geometry={nodes.Woman02_0057D0_0.geometry} material={materials['0057D0']} />
@@ -34,55 +34,55 @@ export function People(props) {
                 <mesh name="Woman01_0057D0_0" geometry={nodes.Woman01_0057D0_0.geometry} material={materials['0057D0']} />
               </group>
               <group name="Woman10" position={[400, 0, -100]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Woman10_0057D0_0" geometry={nodes.Woman10_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Woman10_0057D0_0" geometry={nodes.Woman10_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
               <group name="Woman06" position={[0, 0, -100]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Woman06_0057D0_0" geometry={nodes.Woman06_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Woman06_0057D0_0" geometry={nodes.Woman06_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
               <group name="Woman07" position={[100, 0, -100]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Woman07_0057D0_0" geometry={nodes.Woman07_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Woman07_0057D0_0" geometry={nodes.Woman07_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
               <group name="Woman03" position={[200, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
                 <mesh name="Woman03_0057D0_0" geometry={nodes.Woman03_0057D0_0.geometry} material={materials['0057D0']} />
               </group>
               <group name="Woman09" position={[300, 0, -100]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Woman09_0057D0_0" geometry={nodes.Woman09_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Woman09_0057D0_0" geometry={nodes.Woman09_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
               <group name="Woman04" position={[300, 0, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
                 <mesh name="Woman04_0057D0_0" geometry={nodes.Woman04_0057D0_0.geometry} material={materials['0057D0']} />
               </group>
               <group name="Man08" position={[200, 0, -300]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Man08_0057D0_0" geometry={nodes.Man08_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Man08_0057D0_0" geometry={nodes.Man08_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
               <group name="Man04" position={[300, 0, -200]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Man04_0057D0_0" geometry={nodes.Man04_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Man04_0057D0_0" geometry={nodes.Man04_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
               <group name="Box2" position={[300, 0, -200]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Box2_0057D0_0" geometry={nodes.Box2_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Box2_0057D0_0" geometry={nodes.Box2_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
               <group name="Man05" position={[400, 0, -200]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Man05_0057D0_0" geometry={nodes.Man05_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Man05_0057D0_0" geometry={nodes.Man05_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
               <group name="Man01" position={[0, 0, -200]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Man01_0057D0_0" geometry={nodes.Man01_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Man01_0057D0_0" geometry={nodes.Man01_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
               <group name="Man03" position={[200, 0, -200]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Man03_0057D0_0" geometry={nodes.Man03_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Man03_0057D0_0" geometry={nodes.Man03_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
               <group name="Man02" position={[100, 0, -200]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Man02_0057D0_0" geometry={nodes.Man02_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Man02_0057D0_0" geometry={nodes.Man02_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
               <group name="Man07" position={[100, 0, -300]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Man07_0057D0_0" geometry={nodes.Man07_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Man07_0057D0_0" geometry={nodes.Man07_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
               <group name="Man09" position={[300, 0, -300]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Man09_0057D0_0" geometry={nodes.Man09_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Man09_0057D0_0" geometry={nodes.Man09_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
               <group name="Man10" position={[400, 0, -300]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Man10_0057D0_0" geometry={nodes.Man10_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Man10_0057D0_0" geometry={nodes.Man10_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
               <group name="Man06" position={[0, 0, -300]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                <mesh name="Man06_0057D0_0" geometry={nodes.Man06_0057D0_0.geometry} material={materials['0057D0']} />
+                {/* <mesh name="Man06_0057D0_0" geometry={nodes.Man06_0057D0_0.geometry} material={materials['0057D0']} /> */}
               </group>
             </group>
           </group>
@@ -92,4 +92,4 @@ export function People(props) {
   )
 }
 
-useGLTF.preload('/models/people.glb')
+useGLTF.preload('/models/stage/people.glb')

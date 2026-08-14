@@ -15,7 +15,7 @@ import { useRef } from 'react'
 
 export function Suit(props) {
   const groupRef = useRef()
-  const { nodes, materials } = useGLTF('./models/black_suit-transformed.glb')
+  const { nodes, materials } = useGLTF('./models/chapter-ii/black_suit-transformed.glb')
 
       useFrame((_, delta) => {
           groupRef.current.rotation.y += 0.5 * delta; 
@@ -35,4 +35,4 @@ export function Suit(props) {
   )
 }
 
-useGLTF.preload('./models/black_suit-transformed.glb')
+useGLTF.preload('./models/chapter-ii/black_suit-transformed.glb')

@@ -12,7 +12,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Flower(props) {
-  const { nodes, materials } = useGLTF('./models/flower-transformed.glb')
+  const { nodes, materials } = useGLTF('./models/chapter-i/flower-transformed.glb')
   return (
     <group {...props} dispose={null} >
       <lineSegments geometry={nodes.Material2_7.geometry} material={materials.PaletteMaterial001} rotation={[-Math.PI / 2, 0, 0]} />
@@ -48,4 +48,4 @@ export function Flower(props) {
   )
 }
 
-useGLTF.preload('./models/flower-transformed.glb')
+useGLTF.preload('./models/chapter-i/flower-transformed.glb')

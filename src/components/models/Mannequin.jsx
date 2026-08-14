@@ -12,7 +12,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Mannequin(props) {
-  const { nodes, materials } = useGLTF('./models/mannequin-transformed.glb')
+  const { nodes, materials } = useGLTF('./models/chapter-i/mannequin-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Avatar_Man2_0.geometry} material={materials.Man2} position={[1.5, 0, 0.5]} rotation={[0, 0, 0]} scale={0.001} />
@@ -20,4 +20,4 @@ export function Mannequin(props) {
   )
 }
 
-useGLTF.preload('./models/mannequin-transformed.glb')
+useGLTF.preload('./models/chapter-i/mannequin-transformed.glb')

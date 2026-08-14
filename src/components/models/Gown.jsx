@@ -17,7 +17,7 @@ import { activeChapterAtom } from '../../hooks/store'
 
 export function Gown(props) {
   
-  const { nodes, materials } = useGLTF('./models/gown-transformed.glb')
+  const { nodes, materials } = useGLTF('./models/chapter-i/gown-transformed.glb')
   const groupRef = useRef()
 
   useFrame((_, delta) => {
@@ -32,4 +32,4 @@ export function Gown(props) {
   )
 }
 
-useGLTF.preload('./models/gown-transformed.glb')
+useGLTF.preload('./models/chapter-i/gown-transformed.glb')

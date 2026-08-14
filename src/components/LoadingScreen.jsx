@@ -24,8 +24,8 @@ export const LoadingScreen = () => {
                 <h1 className="text-4xl font-light tracking-wider">
                     <Typewriter
                         words={[
-                            "Initializing Configurator...",
-                            "Loading Vehicle...",
+                            "Initializing",
+                            "Loading....",
                             // "Applying Paint...",
                             // "Preparing Interior...",
                             "Ready."

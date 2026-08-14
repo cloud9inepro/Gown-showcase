@@ -12,7 +12,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Flute(props) {
-  const { nodes, materials } = useGLTF('./models/flute-transformed.glb')
+  const { nodes, materials } = useGLTF('./models/chapter-ii/flute-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Object_2.geometry} material={materials.initialShadingGroup} rotation={[-Math.PI / 2, 0, 0]} />
@@ -20,4 +20,4 @@ export function Flute(props) {
   )
 }
 
-useGLTF.preload('./models/flute-transformed.glb')
+useGLTF.preload('./models/chapter-ii/flute-transformed.glb')

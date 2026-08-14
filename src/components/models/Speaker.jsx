@@ -14,7 +14,7 @@ import { useEffect } from 'react'
 
 export function Speaker(props) {
   const group = React.useRef()
-  const { nodes, materials, animations } = useGLTF('/models/speakerequalizer-transformed.glb')
+  const { nodes, materials, animations } = useGLTF('/models/stage/speakerequalizer-transformed.glb')
   const { actions } = useAnimations(animations, group)
 
     useEffect(() => {
@@ -145,4 +145,4 @@ export function Speaker(props) {
   )
 }
 
-useGLTF.preload('/models/speakerequalizer-transformed.glb')
+useGLTF.preload('/models/stage/speakerequalizer-transformed.glb')

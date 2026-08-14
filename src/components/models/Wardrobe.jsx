@@ -12,7 +12,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Wardrobe(props) {
-  const { nodes, materials } = useGLTF('/models/wardrobe-transformed.glb')
+  const { nodes, materials } = useGLTF('/models/stage/wardrobe-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.wardrobe_Material001_0.geometry} material={materials['Material.001']} rotation={[0, Math.PI / 2, 0]} />
@@ -26,4 +26,4 @@ export function Wardrobe(props) {
   )
 }
 
-useGLTF.preload('/models/wardrobe-transformed.glb')
+useGLTF.preload('/models/stage/wardrobe-transformed.glb')

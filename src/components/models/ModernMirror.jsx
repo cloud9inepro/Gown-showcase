@@ -12,15 +12,17 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Mirror(props) {
-  const { nodes, materials } = useGLTF('./models/modern_mirror-transformed.glb')
+  const { nodes, materials } = useGLTF('./models/chapter-i/modern_mirror-transformed.glb')
   return (
     <group {...props} dispose={null} rotation={[0, Math.PI / 2, 1.5]}>
       <mesh geometry={nodes.Cube565_Material005_0.geometry} material={materials['Material.005']} position={[0.462, 4.66, 0.182]} rotation={[-Math.PI / 2, 0.104, 0]} scale={[0.126, 1.951, 4.58]} />
-      <mesh geometry={nodes.Cube566_Material004_0.geometry} material={materials['Material.004']} position={[0.467, 4.66, 0.182]} rotation={[-Math.PI / 2, 0.104, 0]} scale={[0.115, 1.816, 4.452]} />
+      <mesh geometry={nodes.Cube566_Material004_0.geometry} material={materials['Material.004']} position={[0.467, 4.66, 0.182]} rotation={[-Math.PI / 2, 0.104, 0]} scale={[0.115, 1.816, 4.452]}/>
       <mesh geometry={nodes.Cube566_Material001_0.geometry} material={materials['Material.001']} position={[0.467, 4.66, 0.182]} rotation={[-Math.PI / 2, 0.104, 0]} scale={[0.115, 1.816, 4.452]} />
       <mesh geometry={nodes.Cube566_Material003_0.geometry} material={materials['Material.003']} position={[0.467, 4.66, 0.182]} rotation={[-Math.PI / 2, 0.104, 0]} scale={[0.115, 1.816, 4.452]} />
     </group>
   )
 }
 
-useGLTF.preload('./models/modern_mirror-transformed.glb')
+useGLTF.preload('./models/chapter-i/modern_mirror-transformed.glb')
+
+ {/* <mesh geometry={nodes.Cube566_Material004_0.geometry} material={materials['Material.004']} position={[0.467, 4.66, 0.182]} rotation={[-Math.PI / 2, 0.104, 0]} scale={[0.115, 1.816, 4.452]} /> */}

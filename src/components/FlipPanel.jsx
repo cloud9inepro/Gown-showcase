@@ -7,8 +7,9 @@ import { Chapter01 } from "./Chapter01";
 import { Chapter02 } from "./Chapter02";
 import { Chapter03 } from "./Chapter03";
 import { Chapter04 } from "./Chapter04";
-import { useAtom } from "jotai";
+import { useAtom, useAtomValue } from "jotai";
 import { activeChapterAtom } from "../hooks/store";
+import { targetChapterAtom } from "../hooks/store";
 
 const CHAPTERS = {
   0: Chapter01,
@@ -21,19 +22,22 @@ export const FlipPanel = () => {
   const panelRef = useRef();
   const activeChapterRef = useRef(0);
 
-  const { chapter } = useControls({
-    chapter: { value: 0, min: 0, max: 4, step: 1 },
-  });
+  // const { chapter } = useControls({
+  //   chapter: { value: 0, min: 0, max: 4, step: 1 },
+  // });
+
+  const target = useAtomValue(targetChapterAtom)
 
   const [activeChapter, setActiveChapter] = useAtom(activeChapterAtom);
   const ActiveChapterComponent = CHAPTERS[activeChapter] ?? Chapter01;
+
 
 
   useGSAP(() => {
   const tl = gsap.timeline();
 
   tl.to(panelRef.current.rotation, {
-    y: chapter * Math.PI,
+    y: target * Math.PI,
     duration: 4,
     ease: "power3.inOut",
   }, 0);
@@ -44,7 +48,7 @@ export const FlipPanel = () => {
     ease: "power2.in",
   }, 0);
 
-  tl.call(() => setActiveChapter(chapter), null, 2);
+  tl.call(() => setActiveChapter(target), null, 2);
 
   tl.to(activeChapterRef.current.scale, {
     x: 1, y: 1, z: 1,
@@ -52,7 +56,7 @@ export const FlipPanel = () => {
     ease: "back.out(1.6)",
   }, 2.2);
 
-}, [chapter]);
+}, [target]);
 
   return (
     <group position={[0, 0.5, -0.45]}>
@@ -64,7 +68,7 @@ export const FlipPanel = () => {
       <RoundedBox
         ref={panelRef}
         args={[2.5, 2.5, 0.11]}
-        position={[0, 0, 0]}
+        position={[0, 0, 0.03]}
         radius={0.05}
         smoothness={4}
       >

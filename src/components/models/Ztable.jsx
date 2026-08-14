@@ -12,7 +12,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Ztable(props) {
-  const { nodes, materials } = useGLTF('./models/ztable-transformed.glb')
+  const { nodes, materials } = useGLTF('./models/chapter-ii/ztable-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes['dlX_-_Luxury_Z_Champagne_champagne_0'].geometry} material={materials.champagne} scale={0.01} />
@@ -21,4 +21,4 @@ export function Ztable(props) {
   )
 }
 
-useGLTF.preload('./models/ztable-transformed.glb')
+useGLTF.preload('./models/chapter-ii/ztable-transformed.glb')

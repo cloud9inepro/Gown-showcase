@@ -21,20 +21,19 @@ export const Experience = () => {
   return (
     <>
       <OrbitControls
-      // minPolarAngle={Math.PI / 4}
-      // maxPolarAngle={Math.PI / 2}
-      // minAzimuthAngle={-Math.PI / 4}
-      // maxAzimuthAngle={Math.PI / 4}
-      // minDistance={2}
-      // maxDistance={5}
-      // makeDefault
+      minPolarAngle={Math.PI / 4}
+      maxPolarAngle={Math.PI / 2}
+      minAzimuthAngle={-Math.PI / 4}
+      maxAzimuthAngle={Math.PI / 4}
+      minDistance={2}
+      maxDistance={5}
+      makeDefault
       />
 
       <Suspense fallback={null}>
         <group position={[0, -0.7, -3]}>
 
           {/* vertical stage */}
-
           <group position={[0, 1, 0]}>
                 {/* bar */}
             <mesh position={[0, 0, -0.02]}>
@@ -70,7 +69,7 @@ export const Experience = () => {
             position={[2.2, 0.36, 2]}
             rotation={[0, -1.5, 0]}
           />
-          <People scale={0.2} position={[0.3, 0, 4.3]} rotation={[0, 10, 0]} />
+          <People scale={0.29} position={[0.5, 0, 4.3]} rotation={[0, Math.PI, 0]} />
           <DjBooth
             scale={0.2}
             position={[2.5, 0, 2.3]}

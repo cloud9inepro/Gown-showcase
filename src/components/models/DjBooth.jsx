@@ -12,7 +12,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function DjBooth(props) {
-  const { nodes, materials } = useGLTF('/models/djbooth-transformed.glb')
+  const { nodes, materials } = useGLTF('/models/stage/djbooth-transformed.glb')
   return (
     <group {...props} dispose={null} rotation={[0, 0.9, 0]}>
       <mesh geometry={nodes.Object_4.geometry} material={materials['Circle.010_Bake1_baked.002']} position={[6.601, 1.661, -7.225]} rotation={[0, 0, -Math.PI]} scale={[0.032, 0.51, 0.032]} />
@@ -24,4 +24,4 @@ export function DjBooth(props) {
   )
 }
 
-useGLTF.preload('/models/djbooth-transformed.glb')
+useGLTF.preload('/models/stage/djbooth-transformed.glb')
