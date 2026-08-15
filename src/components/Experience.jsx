@@ -9,6 +9,7 @@ import { Speaker } from "./models/Speaker";
 import { FlipPanel } from "./FlipPanel";
 import { People } from "./models/People";
 import { DjBooth } from "./models/DjBooth";
+import { Statue } from "./models/Statue";
 import { useAtomValue } from "jotai";
 import { activeChapterAtom } from "../hooks/store";
 import { UI } from "./UI";
@@ -21,10 +22,10 @@ export const Experience = () => {
   return (
     <>
       <OrbitControls
-      minPolarAngle={Math.PI / 4}
+      minPolarAngle={Math.PI / 3}
       maxPolarAngle={Math.PI / 2}
       minAzimuthAngle={-Math.PI / 4}
-      maxAzimuthAngle={Math.PI / 4}
+      maxAzimuthAngle={Math.PI / 3}
       minDistance={2}
       maxDistance={5}
       makeDefault
@@ -63,16 +64,21 @@ export const Experience = () => {
           </group>
 
                 {/* 3D models around the stage */}
-          <Speaker scale={0.1} position={[-2, 0, 2]} rotation={[0, 0.6, 0]} />
+          <Speaker scale={0.1} position={[-1.8, 0, 2.8]} rotation={[0, 0.6, 0]} />
           <Wardrobe
             scale={0.07}
-            position={[2.2, 0.36, 2]}
-            rotation={[0, -1.5, 0]}
+            position={[2.1, 0.36, 1.5]}
+            rotation={[0, -1.1, 0]}
           />
           <People scale={0.29} position={[0.5, 0, 4.3]} rotation={[0, Math.PI, 0]} />
           <DjBooth
             scale={0.2}
-            position={[2.5, 0, 2.3]}
+            position={[2, 0, 4.9]}
+            rotation={[0, -0.9, 0]}
+          />
+          <Statue 
+            scale={5}
+            position={[-1.8, 0, 2]}
             rotation={[0, -0.9, 0]}
           />
 
@@ -87,26 +93,10 @@ export const Experience = () => {
       <mesh position={[0, -0.71, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[170, 170]} />
         <meshStandardMaterial
-          // blur={[300, 100]}
-          // resolution={1024}
-          // mixBlur={1}
-          // mixStrength={15}
-          // roughness={0.8}
-          // depthScale={1}
-          // minDepthThreshold={0.4}
-          // maxDepthThreshold={1.2}
           color="#0a0a0a"
           metalness={0.4}
         />
       </mesh>
-{/* 
-      <ContactShadows
-        position={[0, -0.7, 0]}
-        opacity={0.6}
-        scale={10}
-        blur={2.5}
-        far={2}
-      /> */}
     </>
   );
 };

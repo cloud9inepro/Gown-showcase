@@ -17,3 +17,10 @@
 canvas {
     touch-action:none;
 }
+
+
+@keyframes flow{
+    to{
+        background-position: 250% 0;
+    }
+}

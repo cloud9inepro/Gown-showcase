@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, Suspense } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { RoundedBox } from "@react-three/drei";
@@ -22,41 +22,50 @@ export const FlipPanel = () => {
   const panelRef = useRef();
   const activeChapterRef = useRef(0);
 
-  // const { chapter } = useControls({
-  //   chapter: { value: 0, min: 0, max: 4, step: 1 },
-  // });
-
-  const target = useAtomValue(targetChapterAtom)
+  const target = useAtomValue(targetChapterAtom);
 
   const [activeChapter, setActiveChapter] = useAtom(activeChapterAtom);
   const ActiveChapterComponent = CHAPTERS[activeChapter] ?? Chapter01;
 
-
-
   useGSAP(() => {
-  const tl = gsap.timeline();
+    const tl = gsap.timeline();
 
-  tl.to(panelRef.current.rotation, {
-    y: target * Math.PI,
-    duration: 4,
-    ease: "power3.inOut",
-  }, 0);
+    tl.to(
+      panelRef.current.rotation,
+      {
+        y: target * Math.PI,
+        duration: 4,
+        ease: "power3.inOut",
+      },
+      0,
+    );
 
-  tl.to(activeChapterRef.current.scale, {
-    x: 0, y: 0, z: 0,
-    duration: 2,
-    ease: "power2.in",
-  }, 0);
+    tl.to(
+      activeChapterRef.current.scale,
+      {
+        x: 0,
+        y: 0,
+        z: 0,
+        duration: 2,
+        ease: "power2.in",
+      },
+      0,
+    );
 
-  tl.call(() => setActiveChapter(target), null, 2);
+    tl.call(() => setActiveChapter(target), null, 2);
 
-  tl.to(activeChapterRef.current.scale, {
-    x: 1, y: 1, z: 1,
-    duration: 2,
-    ease: "back.out(1.6)",
-  }, 2.2);
-
-}, [target]);
+    tl.to(
+      activeChapterRef.current.scale,
+      {
+        x: 1,
+        y: 1,
+        z: 1,
+        duration: 2,
+        ease: "back.out(1.6)",
+      },
+      2.2,
+    );
+  }, [target]);
 
   return (
     <group position={[0, 0.5, -0.45]}>
@@ -76,9 +85,10 @@ export const FlipPanel = () => {
       </RoundedBox>
 
       <group ref={activeChapterRef} position={[0, 0, 0.5]}>
-        <ActiveChapterComponent />
+        <Suspense fallback={null}>
+          <ActiveChapterComponent />
+        </Suspense>
       </group>
-      
     </group>
   );
 };
