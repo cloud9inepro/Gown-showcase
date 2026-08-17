@@ -1,4 +1,3 @@
-
 export const ALL_MODELS = [
     "/models/chapter-i/flower-transformed",
     "/models/chapter-i/gown-transformed",
@@ -20,9 +19,9 @@ export const ALL_MODELS = [
     "/models/chapter-iv/ring-transformed.glb",
     "/models/chapter-iv/three_gem_necklaces-transformed.glb",
     "/models/chapter-iv/vase_stand-transformed.glb",
-    "/models/stage/djbooth-transformed.glb",
-    "/models/stage/people.glb",
-    "/models/stage/speakerequalizer-transformed.glb",
-    "/models/stage/wardrobe-transformed.glb",
-    "/models/stage/statue-transformed.glb",
+    // "/models/stage/djbooth-transformed.glb",
+    // "/models/stage/people.glb",
+    // "/models/stage/speakerequalizer-transformed.glb",
+    // "/models/stage/wardrobe-transformed.glb",
+    // "/models/stage/statue-transformed.glb",
 ]
