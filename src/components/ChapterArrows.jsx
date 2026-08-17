@@ -32,7 +32,7 @@ export const ChapterArrows = () => {
 export const ChapterBar = () =>{
     const [targetChapter, setTargetChapter] = useAtom(targetChapterAtom);
     return(
-        <div style={{ display: "flex", gap: "15px", width: "full", position: "relative", bottom: "80px",
+        <div style={{ display: "flex", gap: "15px", width: "full", position: "relative", bottom: "130px",
                        justifyContent: "center"
            }}>
             {CHAPTERS.map((ch) =>(
